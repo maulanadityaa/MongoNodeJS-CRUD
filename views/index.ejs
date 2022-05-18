@@ -26,6 +26,24 @@
       </div>
     </div>
     <!-- JS -->
-    <%- include('add_modal.ejs') -%> <%- include('js.ejs') %>
+    <%- include('add_modal.ejs') -%> <%- include('js.ejs') %> <%- include('edit_modal.ejs') %>
+
+    <script>
+      $(".button-update").on("click", function () {
+        let id = $(this).data("id");
+        let nama = $(this).data("nama");
+        let nim = $(this).data("nim");
+        let jurusan = $(this).data("jurusan");
+        let alamat = $(this).data("alamat");
+
+        $("#edit-modal").modal("show");
+
+        $(".id").val(id);
+        $(".nama").val(nama);
+        $(".nim").val(nim);
+        $(".jurusan").val(jurusan);
+        $(".alamat").val(alamat);
+      });
+    </script>
   </body>
 </html>
